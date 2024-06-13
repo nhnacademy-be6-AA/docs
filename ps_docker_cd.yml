@@ -1,0 +1,44 @@
+name: Docker CD
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Run chmod to make gradlew executable
+        run: chmod +x ./gradlew
+        
+      - name: Build with Gradle
+        run: ./gradlew clean build
+
+      - name: Get current time
+        uses: josStorer/get-current-time@v2.0.2
+        id: current-time
+        with:
+          format: YYYY-MM-DDTHH-mm-ss
+          utcOffset: "+09:00"
+
+      - name: Docker Image Build
+        run: docker build --file Dockerfile --build-arg JAR_FILE=build/libs/preonboarding-0.0.1-SNAPSHOT.jar --tag parkseol/wanted-preonboarding-challenge-backend-16 .
+
+      - name: Docker Hub Login
+        uses: docker/login-action@v2
+        with:
+          username: parkseol
+          password: password
+
+      - name: Push Docker Image to Docker Hub
+        run: docker push parkseol/wanted-preonboarding-challenge-backend-16:latest
+          # docker push parkseol/wanted-preonboarding-challenge-backend-16:${{ steps.current-time.outputs.formattedTime }}
+
