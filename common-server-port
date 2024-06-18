@@ -2,5 +2,8 @@ front-server : 8081 8082
 back-core-server : 8090
 back-coupon-server : 8091
 
-gateway : ~
-ureka : ~
+gateway : 8080
+eureka : 8761
+
+docker inner address :
+  eureka : eureka-server
