@@ -1,0 +1,6 @@
+front-server : 8081 8082
+back-core-server : 8090
+back-coupon-server : 8091
+
+gateway : ~
+ureka : ~
