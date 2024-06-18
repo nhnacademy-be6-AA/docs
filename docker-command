@@ -1,0 +1,22 @@
+1. 계정 로그인 필수!
+
+2. 독커 이미지 빌드(dockerfile 필수) :  docker build --platform(os 종류 optional) linux/amd64 -t {userName}/{imageFileName}:{tag} .
+
+3. docker image push : docker push {userName}/{imageFileName}:{tag}
+
+4. 빌드 하려는 path에 타겟 jar 파일과 dockerfile이 같이 있어야함
+    ------------------------------------------------
+    FROM eclipse-temurin:21-jre
+    
+    WORKDIR /app
+    
+    COPY gateway-0.0.1-SNAPSHOT.jar /app/gateway.jar
+    
+    ENTRYPOINT ["java", "-jar", "/app/gateway.jar"]
+    ------------------------------------------------
+
+5. 실행 시킬 서버에서 pull : docker pull --platform(os 종류 optional) linux/amd64 -t {userName}/{imageFileName}:{tag}
+
+6. docker container에 올리기 : docker run -i -t --name {containerName} --net {network} {userName}/{imageFileName}
+
+7. docker container 시작하기 : docker start {containerName}
