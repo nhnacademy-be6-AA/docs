@@ -1,17 +1,21 @@
 DROP TABLE IF EXISTS `user`;
-DROP TABLE IF EXISTS `order`;
-DROP TABLE IF EXISTS `wrapping`;
-DROP TABLE IF EXISTS `order_status`;
-DROP TABLE IF EXISTS `bill_log`;
-DROP TABLE IF EXISTS `order_detail`;
-DROP TABLE IF EXISTS `delivery_policy`;
-DROP TABLE IF EXISTS `payment_log`;
-
 CREATE TABLE `user` (
     `id` bigint NOT NULL AUTO_INCREMENT,
     `name` varchar(50) NOT NULL,
     PRIMARY KEY (`id`)
 );
+
+DROP TABLE IF EXISTS `order_detail`;
+
+DROP TABLE IF EXISTS `wrapping`;
+DROP TABLE IF EXISTS `order_status`;
+
+DROP TABLE IF EXISTS `payment_log`;
+DROP TABLE IF EXISTS `bill_log`;
+
+DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `delivery_policy`;
+
 
 
 CREATE TABLE `wrapping` (
@@ -59,7 +63,7 @@ CREATE TABLE `order_detail` (
     `product_id` bigint NOT NULL,
     `order_id` bigint NOT NULL,
     `order_status_id` int NOT NULL,
-    `package_id` int NOT NULL,
+    `wrapping_id` int NOT NULL,
     `price` int NOT NULL,
     `quantity` int NOT NULL,
     `wrap` boolean NOT NULL DEFAULT false,
@@ -68,7 +72,7 @@ CREATE TABLE `order_detail` (
     FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
     FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
     FOREIGN KEY (`order_status_id`) REFERENCES `order_status` (`id`),
-    FOREIGN KEY (`package_id`) REFERENCES `wrapping` (`id`)
+    FOREIGN KEY (`wrapping_id`) REFERENCES `wrapping` (`id`)
 );
 
 CREATE TABLE `bill_log` (
