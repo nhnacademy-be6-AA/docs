@@ -39,7 +39,6 @@ CREATE TABLE product (
 CREATE TABLE author (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    role VARCHAR(10)
 );
 
 CREATE TABLE book_author (
