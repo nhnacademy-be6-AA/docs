@@ -20,41 +20,41 @@ CREATE TABLE book (
     isbn VARCHAR(13) NOT NULL,
     publisher_id INT NOT NULL,
     publish_date DATETIME,
-    id2 BigINT,
+    id2 INT,
     FOREIGN KEY (publisher_id) REFERENCES publisher(id)
 );
 
 CREATE TABLE product (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     stock INT NOT NULL,
     price DECIMAL(19, 2) NOT NULL,
     forward_date DATE,
     score INT,
     thumbnail_path VARCHAR(255),
     category_id INT NOT NULL,
-    book_id BIGINT NOT NULL,
+    book_id INT NOT NULL,
     FOREIGN KEY (category_id) REFERENCES category(id),
     FOREIGN KEY (book_id) REFERENCES book(id)
 );
 
 CREATE TABLE author (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
 );
 
 CREATE TABLE book_author (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    author_id BIGINT NOT NULL,
-    book_id BIGINT NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    author_id INT NOT NULL,
+    book_id INT NOT NULL,
     FOREIGN KEY (author_id) REFERENCES author(id),
     FOREIGN KEY (book_id) REFERENCES book(id)
 );
 
 CREATE TABLE review (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     content VARCHAR(255) NOT NULL,
     picture_path VARCHAR(255),
-    product_id BIGINT NOT NULL,
+    product_id INT NOT NULL,
     review_score INT NOT NULL,
     review_create_date DATETIME NOT NULL,
     FOREIGN KEY (product_id) REFERENCES product(id)
@@ -67,7 +67,7 @@ CREATE TABLE tag (
 
 CREATE TABLE product_tag (
     tag_id INT NOT NULL,
-    product_id BIGINT NOT NULL,
+    product_id INT NOT NULL,
     PRIMARY KEY (tag_id, product_id),
     FOREIGN KEY (tag_id) REFERENCES tag(id),
     FOREIGN KEY (product_id) REFERENCES product(id)
