@@ -1,5 +1,6 @@
 ### 상품 테이블 관련 sql문
 
+```
 CREATE TABLE category (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20) NOT NULL,
@@ -13,13 +14,13 @@ CREATE TABLE publisher (
 );
 
 CREATE TABLE book (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
     isbn VARCHAR(13) NOT NULL,
     publisher_id INT NOT NULL,
     publish_date DATETIME,
-    id2 BIGINT,
+    id2 BigINT,
     FOREIGN KEY (publisher_id) REFERENCES publisher(id)
 );
 
@@ -71,3 +72,4 @@ CREATE TABLE product_tag (
     FOREIGN KEY (tag_id) REFERENCES tag(id),
     FOREIGN KEY (product_id) REFERENCES product(id)
 );
+```
