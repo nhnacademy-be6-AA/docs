@@ -1,10 +1,3 @@
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
-    `id` bigint NOT NULL AUTO_INCREMENT,
-    `name` varchar(50) NOT NULL,
-    PRIMARY KEY (`id`)
-);
-
 DROP TABLE IF EXISTS `order_detail`;
 
 DROP TABLE IF EXISTS `wrapping`;
@@ -60,7 +53,7 @@ CREATE TABLE `order` (
 
 CREATE TABLE `order_detail` (
     `id` bigint NOT NULL AUTO_INCREMENT,
-    `product_id` bigint NOT NULL,
+    `product_id` int NOT NULL,
     `order_id` bigint NOT NULL,
     `order_status_id` int NOT NULL,
     `wrapping_id` int NOT NULL,
