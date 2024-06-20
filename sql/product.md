@@ -32,7 +32,7 @@ CREATE TABLE product (
     score INT,
     thumbnail_path VARCHAR(255),
     category_id INT NOT NULL,
-    product_name VARCHAR(50) NOT NULL,
+    product_name VARCHAR(80) NOT NULL,
     stock_status varchar(20) NOT NULL,
     FOREIGN KEY (category_id) REFERENCES category(id)
 );
