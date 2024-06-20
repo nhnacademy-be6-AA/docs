@@ -56,7 +56,7 @@ CREATE TABLE `order_detail` (
     `product_id` int NOT NULL,
     `order_id` bigint NOT NULL,
     `order_status_id` int NOT NULL,
-    `wrapping_id` int NOT NULL,
+    `wrapping_id` int,
     `price` int NOT NULL,
     `quantity` int NOT NULL,
     `wrap` boolean NOT NULL DEFAULT false,
