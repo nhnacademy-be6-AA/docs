@@ -27,14 +27,16 @@ CREATE TABLE book (
 CREATE TABLE product (
     id INT AUTO_INCREMENT PRIMARY KEY,
     stock INT NOT NULL,
+    stock varchar(10) NOT NULL,
     price DECIMAL(19, 2) NOT NULL,
-    forward_date DATE,
+    forward_date DATETIME,
     score INT,
     thumbnail_path VARCHAR(255),
     category_id INT NOT NULL,
     book_id INT NOT NULL,
     FOREIGN KEY (category_id) REFERENCES category(id),
     FOREIGN KEY (book_id) REFERENCES book(id)
+
 );
 
 CREATE TABLE author (
