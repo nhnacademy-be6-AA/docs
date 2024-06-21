@@ -20,26 +20,27 @@ CREATE TABLE book (
     isbn VARCHAR(13) NOT NULL,
     publisher_id INT NOT NULL,
     publish_date DATETIME,
-    id2 INT,
-    FOREIGN KEY (publisher_id) REFERENCES publisher(id)
+    product_id INT,
+    FOREIGN KEY (publisher_id) REFERENCES publisher(id),
+    FOREIGN KEY (product_id) REFERENCES product(id)
 );
-
 CREATE TABLE product (
     id INT AUTO_INCREMENT PRIMARY KEY,
     stock INT NOT NULL,
-    price DECIMAL(19, 2) NOT NULL,
-    forward_date DATE,
+    price INT,
+    forward_date DATETIME,
     score INT,
     thumbnail_path VARCHAR(255),
     category_id INT NOT NULL,
-    book_id INT NOT NULL,
-    FOREIGN KEY (category_id) REFERENCES category(id),
-    FOREIGN KEY (book_id) REFERENCES book(id)
+    product_name VARCHAR(80) NOT NULL,
+    stock_status varchar(20) NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES category(id)
 );
 
+
 CREATE TABLE author (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    id Int AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE book_author (
@@ -72,4 +73,5 @@ CREATE TABLE product_tag (
     FOREIGN KEY (tag_id) REFERENCES tag(id),
     FOREIGN KEY (product_id) REFERENCES product(id)
 );
+
 ```
