@@ -189,6 +189,6 @@ REFERENCES `product` (
 	`id`
 );
 
-
+alter table `user` modify column `birthday` datetime;
 
 ```
