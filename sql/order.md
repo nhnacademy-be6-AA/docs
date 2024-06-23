@@ -35,7 +35,7 @@ CREATE TABLE `delivery_policy` (
 );
 
 CREATE TABLE `order` (
-    `id` bigint NOT NULL AUTO_INCREMENT,
+    `id` varchar(50) NOT NULL,
     `delivery_policy_id` int NOT NULL,
     `user_id` bigint NOT NULL COMMENT '회원 고유 ID (AUTO_INCREMENT)',
     `price` int NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE `order` (
 CREATE TABLE `order_detail` (
     `id` bigint NOT NULL AUTO_INCREMENT,
     `product_id` int NOT NULL,
-    `order_id` bigint NOT NULL,
+    `order_id` varchar(50) NOT NULL,
     `order_status_id` int NOT NULL,
     `wrapping_id` int,
     `price` int NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE `bill_log` (
     `payment_date` datetime NOT NULL,
     `status` varchar(20) NOT NULL COMMENT 'ENUM(결제전, 결제완료, 결제 취소, 환불, 결제실패)',
     `payment_key` binary(16) NOT NULL,
-	`order_id` bigint NOT NULL,
+	`order_id` varchar(50) NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`order_id`) REFERENCES `order` (`id`)
 );
@@ -88,3 +88,6 @@ CREATE TABLE `payment_log` (
     PRIMARY KEY (`id`),
     FOREIGN KEY (`bill_id`) REFERENCES `bill_log` (`id`)
 );
+
+alter table `order_detail` add column `update_date` datetime;
+alter table `order_status` add column  `create_date` datetime;
