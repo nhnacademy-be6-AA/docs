@@ -35,7 +35,8 @@ CREATE TABLE `delivery_policy` (
 );
 
 CREATE TABLE `order` (
-    `id` varchar(50) NOT NULL,
+    `id` bigint NOT NULL AUTO_INCREMENT,
+    `order_str` varchar(50) NOT NULL,
     `delivery_policy_id` int NOT NULL,
     `user_id` bigint NOT NULL COMMENT '회원 고유 ID (AUTO_INCREMENT)',
     `price` int NOT NULL,
@@ -88,6 +89,3 @@ CREATE TABLE `payment_log` (
     PRIMARY KEY (`id`),
     FOREIGN KEY (`bill_id`) REFERENCES `bill_log` (`id`)
 );
-
-alter table `order_detail` add column `update_date` datetime;
-alter table `order_status` add column  `create_date` datetime;
