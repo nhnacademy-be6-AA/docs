@@ -14,7 +14,7 @@ CREATE TABLE publisher (
 );
 
 CREATE TABLE book (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
     isbn VARCHAR(13) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE author (
 );
 
 CREATE TABLE book_author (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     author_id INT NOT NULL,
     book_id INT NOT NULL,
     FOREIGN KEY (author_id) REFERENCES author(id),
