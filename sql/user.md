@@ -19,7 +19,7 @@ DROP table if exists `deactivation`;
 CREATE TABLE `deactivation` (
 	`user_id`	bigint	NOT NULL ,
 	`reason`	varchar(50)	NOT NULL,
-	`deactivation_date`	datetime	NOT NULL	DEFAULT NOW()
+	`deactivation_at`	datetime	NOT NULL	DEFAULT NOW()
 );
 
 DROP table if exists `grade`;
@@ -39,12 +39,28 @@ CREATE TABLE `user` (
 	`email`	varchar(255)	NOT NULL,
 	`password`	varchar(255)	NOT NULL,
 	`birthday`	DATE	NOT NULL,
-	`create_date`	datetime	NOT NULL DEFAULT NOW(),
-	`last_login_date`	datetime	NULL DEFAULT NOW(),
+	`create_at`	datetime	NOT NULL DEFAULT NOW(),
+	`last_login_at`	datetime	NULL DEFAULT NOW(),
 	`status`	varchar(10)	NOT NULL,
-	`modify_date`	datetime	NULL DEFAULT NOW(),
-	`grade_id`	int	NOT NULL,
+	`modify_at`	datetime	NULL DEFAULT NOW(),
 	`is_admin`	boolean	NOT NULL
+);
+
+DROP TABLE IF EXISTS grade_log;
+
+CREATE TABLE grade_log (
+	id	bigint	NOT NULL,
+	change_date	date	NOT NULL,
+	grade_id	int	NOT NULL,
+	user_id	bigint	NOT NULL
+);
+
+DROP TABLE IF EXISTS user_coupon;
+
+CREATE TABLE user_coupon (
+	id	bigint	NOT NULL,
+	coupon_id	bigint	NOT NULL,
+	user_id	bigint	NOT NULL
 );
 
 DROP table if exists `user_auth`;
@@ -59,8 +75,7 @@ CREATE TABLE `user_auth` (
 DROP table if exists `cart`;
 CREATE TABLE `cart` (
 	`id`	bigint	NOT NULL ,
-	`user_id`	bigint	NULL,
-	`update_date`	datetime	NOT NULL	DEFAULT NOW()
+	`user_id`	bigint	NULL
 );
 
 DROP table if exists `cart_detail`;
@@ -101,6 +116,17 @@ ALTER TABLE `user` ADD CONSTRAINT `PK_USER` PRIMARY KEY (
 
 ALTER TABLE `user` MODIFY COLUMN id bigint auto_increment not null;
 
+ALTER TABLE grade_log ADD CONSTRAINT PK_GRADELOG PRIMARY KEY (
+	id
+);
+
+alter table grade_log modify column id bigint not null auto_increment;
+
+ALTER TABLE user_coupon ADD CONSTRAINT PK_USER_COUPON PRIMARY KEY (
+	id
+);
+
+alter table  user_coupon modify column id bigint not null auto_increment;
 
 ALTER TABLE `user_auth` ADD CONSTRAINT `PK_USER_AUTH` PRIMARY KEY (
 	`id`
@@ -147,11 +173,11 @@ REFERENCES `user` (
 	`id`
 );
 
-ALTER TABLE `user` ADD CONSTRAINT `FK_grade_TO_user_1` FOREIGN KEY (
-	`grade_id`
+ALTER TABLE user_coupon ADD CONSTRAINT FK_user_TO_user_coupon_1 FOREIGN KEY (
+	user_id
 )
-REFERENCES `grade` (
-	`id`
+REFERENCES user (
+	id
 );
 
 ALTER TABLE `cart` ADD CONSTRAINT `FK_user_TO_cart_1` FOREIGN KEY (
@@ -189,6 +215,18 @@ REFERENCES `product` (
 	`id`
 );
 
-alter table `user` modify column `birthday` datetime;
+ALTER TABLE grade_log ADD CONSTRAINT FK_grade_TO_grade_log_1 FOREIGN KEY (
+	grade_id
+)
+REFERENCES grade (
+	id
+);
+
+ALTER TABLE grade_log ADD CONSTRAINT FK_user_TO_grade_log_1 FOREIGN KEY (
+	user_id
+)
+REFERENCES user (
+	id
+);
 
 ```
