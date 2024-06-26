@@ -54,7 +54,7 @@ CREATE TABLE `order_detail` (
     `price` int NOT NULL,
     `quantity` int NOT NULL,
     `wrap` boolean NOT NULL DEFAULT false,
-    `create_date` datetime NOT NULL,
+    `create_at` datetime NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
     FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
