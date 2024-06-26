@@ -37,7 +37,7 @@ CREATE TABLE `order` (
     `address` varchar(200) NOT NULL,
     `address_detail` varchar(200) NULL,
     `zipcode` int NOT NULL,
-    `desired_delivery_date` datetime NULL,
+    `desired_delivery_date` date NULL,
     `receiver` varchar(20) NOT NULL,
     `order_str` varchar(50) NOT NULL,
     PRIMARY KEY (`id`),
