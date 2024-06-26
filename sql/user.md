@@ -1,6 +1,8 @@
 ### User 쪽 ddl
 
 - login_id unique 부여 index 추가
+- 일짜 관련 필드 이름 변경 및 데이터타입 변경
+- grade log 추가
 
 ```
 
@@ -39,7 +41,7 @@ CREATE TABLE `user` (
 	`email`	varchar(255)	NOT NULL,
 	`password`	varchar(255)	NOT NULL,
 	`birthday`	DATE	NOT NULL,
-	`create_at`	datetime	NOT NULL DEFAULT NOW(),
+	`created_at`	datetime	NOT NULL DEFAULT NOW(),
 	`last_login_at`	datetime	NULL DEFAULT NOW(),
 	`status`	varchar(10)	NOT NULL,
 	`modify_at`	datetime	NULL DEFAULT NOW(),
