@@ -84,7 +84,7 @@ DROP table if exists `cart_detail`;
 CREATE TABLE `cart_detail` (
 	`id` 	bigint	NOT NULL ,
 	`cart_id`	bigint	NOT NULL ,
-	`quantity`	int	NOT NULL	DEFAULT 0,
+	`quantity`	int	NOT NULL	DEFAULT 1,
 	`product_id`	int	NOT NULL
 );
 
