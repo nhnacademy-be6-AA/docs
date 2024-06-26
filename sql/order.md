@@ -16,7 +16,7 @@ CREATE TABLE `wrapping` (
 CREATE TABLE `order_status` (
     `id` int NOT NULL AUTO_INCREMENT,
     `name` varchar(10) NOT NULL,
-    `update_date` datetime NOT NULL,
+    `update_at` datetime NOT NULL,
     PRIMARY KEY (`id`)
 );
 
