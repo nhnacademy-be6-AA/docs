@@ -66,7 +66,7 @@ CREATE TABLE `bill_log` (
     `id` bigint NOT NULL AUTO_INCREMENT,
     `payment` varchar(20) NOT NULL,
     `price` int NOT NULL,
-    `payment_date` datetime NOT NULL,
+    `payment_date` date NOT NULL,
     `status` varchar(20) NOT NULL COMMENT 'ENUM(결제전, 결제완료, 결제 취소, 환불, 결제실패)',
     `payment_key` binary(16) NOT NULL,
 	`order_id` bigint NOT NULL,
