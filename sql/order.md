@@ -40,6 +40,10 @@ CREATE TABLE `order` (
     `desired_delivery_date` date NULL,
     `receiver` varchar(20) NOT NULL,
     `order_str` varchar(50) NOT NULL,
+
+    `sender` varchar(20) NOT NULL,
+    `sender_contact_number` varchar(15) NOT NULL,
+    `receiver_contact_number` varchar(15) NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 );
@@ -66,7 +70,7 @@ CREATE TABLE `bill_log` (
     `id` bigint NOT NULL AUTO_INCREMENT,
     `payment` varchar(20) NOT NULL,
     `price` int NOT NULL,
-    `payment_date` date NOT NULL,
+    `pay_at` datetime NOT NULL,
     `status` varchar(20) NOT NULL COMMENT 'ENUM(결제전, 결제완료, 결제 취소, 환불, 결제실패)',
     `payment_key` binary(16) NOT NULL,
 	`order_id` bigint NOT NULL,
@@ -83,3 +87,4 @@ CREATE TABLE `payment_log` (
     PRIMARY KEY (`id`),
     FOREIGN KEY (`bill_id`) REFERENCES `bill_log` (`id`)
 );
+
