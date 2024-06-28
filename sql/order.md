@@ -72,7 +72,7 @@ CREATE TABLE `bill_log` (
     `price` int NOT NULL,
     `pay_at` datetime NOT NULL,
     `status` varchar(20) NOT NULL COMMENT 'ENUM(결제전, 결제완료, 결제 취소, 환불, 결제실패)',
-    `payment_key` binary(16) NOT NULL,
+    `payment_key` varchar(50) NOT NULL,
 	`order_id` bigint NOT NULL,
     `cancel_reason` varchar(255),
     PRIMARY KEY (`id`),
@@ -88,3 +88,11 @@ CREATE TABLE `payment_log` (
     FOREIGN KEY (`bill_id`) REFERENCES `bill_log` (`id`)
 );
 
+insert into `order_status` (id, name, update_at) values (1, 'READY', '2024-06-26 00:00:00');
+insert into `order_status` (id, name, update_at) values (2, 'IN_PROGRESS', '2024-06-26 00:00:00');
+insert into `order_status` (id, name, update_at) values (3, 'WAITING_FOR_DEPOSIT', '2024-06-26 00:00:00');
+insert into `order_status` (id, name, update_at) values (4, 'DONE', '2024-06-26 00:00:00');
+insert into `order_status` (id, name, update_at) values (5, 'CANCELED', '2024-06-26 00:00:00');
+insert into `order_status` (id, name, update_at) values (6, 'PARTIAL_CANCELED', '2024-06-26 00:00:00');
+insert into `order_status` (id, name, update_at) values (7, 'SHIPPING_OUT', '2024-06-26 00:00:00');
+insert into `order_status` (id, name, update_at) values (8, 'SHIPPED', '2024-06-26 00:00:00');
