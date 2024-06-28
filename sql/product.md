@@ -39,9 +39,10 @@ CREATE TABLE product (
 );
 
 CREATE TABLE author (
-    id bigint AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL
 );
+
 
 CREATE TABLE book_author (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -59,6 +60,17 @@ CREATE TABLE review (
     review_score INT NOT NULL,
     review_create_date DATETIME NOT NULL
 );
+
+
+CREATE TABLE review (
+	id	int	NOT NULL primary key auto_increment,
+	content	varchar(255)	NOT NULL,
+	pricture_path	varchar(255)	NULL,
+	review_score	int	NOT NULL,
+	review_created_at	datetime	NOT NULL,
+	order_detail_id	bigint	NOT NULL,
+    foreign key (order_detail_id) references order_detail(id)
+    );
     
 
 CREATE TABLE tag (
@@ -73,7 +85,6 @@ CREATE TABLE product_tag (
     FOREIGN KEY (tag_id) REFERENCES tag(id),
     FOREIGN KEY (product_id) REFERENCES product(id)
 );
-
 
 ```
 
