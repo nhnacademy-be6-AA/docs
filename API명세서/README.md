@@ -19,10 +19,10 @@
  
 ##### Body
  
-| name    | type   | description            | required     |
-| :-----: | :----: | :--------------------- | :---:        |
-| loginId | string | 사용자가 로그인한 아이디 | **Required** |
-| role    | string | 사용자 권한             | **Required** |
+| name    | type   | description            | 필수 |
+| :-----  | :----  | :--------------------- | ---- |
+| loginId | string | 사용자가 로그인한 아이디 | 필수 |
+| role    | string | 사용자 권한             | 필수 |
  
 #### Response
 
@@ -32,7 +32,7 @@
 <summary>200 Ok : 성공적으로 로그인 된 경우</summary>
   
 | key           | value             | description                                                        | 
-| :-----------: | :---------------: | :----------------------------------------------------------------- |
+| :-----------  | :---------------  | :----------------------------------------------------------------- |
 | Authorization | jwt access token  | jwt access token `user_id`, `role`, `iat`, `exp`, `sub` 가 들어있음 |
 | Refresh-Token | jwt refresh token | jwt refresh token                                                  |
  
