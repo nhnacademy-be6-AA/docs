@@ -81,11 +81,11 @@ CREATE TABLE `bill_log` (
 
 CREATE TABLE `payment_log` (
     `id` int NOT NULL AUTO_INCREMENT,
-    `bill_id` bigint NOT NULL,
+    `order_id` bigint NOT NULL,
     `name` varchar(20) NOT NULL,
     `price` int NOT NULL,
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`bill_id`) REFERENCES `bill_log` (`id`)
+    FOREIGN KEY (`order_id`) REFERENCES `order` (`id`)
 );
 
 insert into `order_status` (id, name, update_at) values (1, 'READY', '2024-06-26 00:00:00');
