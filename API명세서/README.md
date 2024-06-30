@@ -10,7 +10,7 @@
 ### 토큰 발급 
  
 > ![](https://img.shields.io/static/v1?label=&message=POST&color=brightgreen) <br>
-> buzz-book.store:**8082/api/auth/token**
+> buzz-book.store:**8100/api/auth/token**
  
 <details>
 <summary>detail</summary>
