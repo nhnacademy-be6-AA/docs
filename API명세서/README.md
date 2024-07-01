@@ -9,7 +9,7 @@
 
 ### 토큰 발급 
  
-> ![](https://img.shields.io/static/v1?label=&message=POST&color=brightgreen) <br>
+> ![](https://img.shields.io/static/v1?label=&message=POST&color=brightgreen) <br />
 > buzz-book.store:**8100/api/auth/token**
  
 <details>
@@ -20,9 +20,11 @@
 ##### Body
  
 | name    | type   | description            | 필수 |
-| :-----  | :----  | :--------------------- | ---- |
-| loginId | string | 사용자가 로그인한 아이디 | 필수 |
-| role    | string | 사용자 권한             | 필수 |
+| :-----  | :----  | :--------------------- | --- |
+| loginId | string | 사용자가 로그인한 아이디     | 필수 |
+| role    | string | 사용자 권한               | 필수 |
+| userId  | string | db pk                  | 필수 |
+| cartId  | string | 장바구니 아이디            | 필수 |
  
 #### Response
 
@@ -33,8 +35,10 @@
   
 | key           | value             | description                                                        | 
 | :-----------  | :---------------  | :----------------------------------------------------------------- |
-| Authorization | jwt access token  | jwt access token `user_id`, `role`, `iat`, `exp`, `sub` 가 들어있음 |
+| Authorization | jwt access token  | jwt access token `user_id`, `iat`, `exp`, `sub` 가 들어있음           |
 | Refresh-Token | jwt refresh token | jwt refresh token                                                  |
+
+`user_id` UUIDv4(string)
  
 `iat` 발급시간(number)
 
