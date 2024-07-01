@@ -23,8 +23,7 @@
 | :-----  | :----  | :--------------------- | --- |
 | loginId | string | 사용자가 로그인한 아이디     | 필수 |
 | role    | string | 사용자 권한               | 필수 |
-| userId  | string | db pk                  | 필수 |
-| cartId  | string | 장바구니 아이디            | 필수 |
+| userId  | long   | db pk                  | 필수 |
  
 #### Response
 
