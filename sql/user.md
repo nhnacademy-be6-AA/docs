@@ -3,6 +3,7 @@
 - login_id unique 부여 index 추가
 - 일짜 관련 필드 이름 변경 및 데이터타입 변경
 - grade log 추가
+- cart uuid 추가
 
 ```
 
@@ -77,7 +78,8 @@ CREATE TABLE `user_auth` (
 DROP table if exists `cart`;
 CREATE TABLE `cart` (
 	`id`	bigint	NOT NULL ,
-	`user_id`	bigint	NULL
+	`user_id`	bigint	NULL,
+	`uuid` binary(16) not null unique
 );
 
 DROP table if exists `cart_detail`;
