@@ -1,4 +1,6 @@
+elasticsearch index
 
+```
 DELETE /aa-bb_author_index
 DELETE /aa-bb_book_index
 DELETE /aa-bb_category_index
@@ -110,7 +112,7 @@ PUT /aa-bb_tag_index
     }
   }
 }
-
+```
 
 
 
