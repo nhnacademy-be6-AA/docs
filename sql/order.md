@@ -40,10 +40,10 @@ CREATE TABLE `order` (
     `desired_delivery_date` date NULL,
     `receiver` varchar(20) NOT NULL,
     `order_str` varchar(50) NOT NULL,
-
     `sender` varchar(20) NOT NULL,
     `sender_contact_number` varchar(15) NOT NULL,
     `receiver_contact_number` varchar(15) NOT NULL,
+    `order_password` varchar(255),
     PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 );
