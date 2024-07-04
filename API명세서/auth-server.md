@@ -121,9 +121,6 @@
 | userId  | string | 사용자 ID                            |
 | loginId | string | 사용자가 로그인한 아이디               |
 | role    | string | 사용자 권한                           |
-| iat     | number | 토큰 발급시간                          |
-| exp     | number | 토큰 만료시간                          |
-| sub     | string | 토큰 타입 ('access_token' or 'refresh_token') |
 
 </details>
 
