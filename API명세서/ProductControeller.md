@@ -170,9 +170,7 @@ ProductBookResponse
 | Transaction | Specification | name      | type           | description                        | required |
 |-------------|----------------|-----------|----------------|------------------------------------|----------|
 | Request     | body           | productReq| ProductRequest | 추가할 상품의 정보 | yes      |
-|             |                |           |                |                                    |          |
 | Response    | body           | ProductResponse |          | 추가된 상품의 정보   |          |
-|             |                |           |                |                                    |          |
 
 
 
@@ -189,9 +187,7 @@ ProductBookResponse
 | Request | parameter | status | String | Available values : Product.status | no |
 | | parameter | pageNo | int | Default value : 0 | no |
 | | parameter | pageSize | int | Default value : 10 | no |
-| | | | |
 | Response | body | Page\<ProductResponse\> |  |
-| | | | |
 
 
 
@@ -203,7 +199,6 @@ ProductBookResponse
 | Transaction | Specification | name | type | description            | required |
 |-------------|----------------|------|------|------------------------|----------|
 | Request     | path variable  | id   | int  | 주어진 id(int)         | yes      |
-|             |                |      |      |                        |          |
 | Response    | body           |      | ProductResponse | 상품 정보 |          |
 
 
@@ -216,7 +211,6 @@ ProductBookResponse
 |-------------|----------------|-------------|---------------------|--------------------------------|----------|
 | Request     | path variable  | id          | int                 | 주어진 id(int)                 | yes      |
 |             | body           | productReq  | ProductUpdateRequest| 업데이트할 상품 정보(ProductUpdateRequest) | yes      |
-|             |                |             |                     |                                |          |
 | Response    | body           |             | ProductResponse     | 업데이트된 상품 정보           |          |
 
 
@@ -228,7 +222,6 @@ ProductBookResponse
 | Transaction | Specification | name | type | description            | required |
 |-------------|----------------|------|------|------------------------|----------|
 | Request     | path variable  | id   | int  | 주어진 id(int)         | yes      |
-|             |                |      |      |                        |          |
 | Response    | body           |      |      |                        |          |
 
 
