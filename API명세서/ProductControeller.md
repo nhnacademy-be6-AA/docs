@@ -64,7 +64,7 @@ ProductResponse
 | thumbnailPath| String              | 썸네일 이미지 경로      | 아니오 |
 | stockStatus  | Product.StockStatus | 재고 상태               | 예   |
 | category     | CategoryResponse    | 카테고리 정보           | 예   |
-| tags         | List<TagResponse>   | 태그 리스트             | 아니오 |
+| tags         | List\<TagResponse\>   | 태그 리스트             | 아니오 |
 </details>
 
 <details>
@@ -114,7 +114,7 @@ BookResponse
 | ------------ | --------------- | ------------------ | -------- |
 | id           | long            | ID                 | 예       |
 | title        | String          | 제목               | 예       |
-| authors      | List<String>    | 저자 목록          | 예       |
+| authors      | List\<String\>    | 저자 목록          | 예       |
 | description  | String          | 설명               | 아니오   |
 | isbn         | String          | ISBN 값            | 예       |
 | publisher    | String          | 출판사             | 예       |
