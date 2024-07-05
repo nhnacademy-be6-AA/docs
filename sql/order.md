@@ -59,7 +59,7 @@ CREATE TABLE `order_detail` (
     `quantity` int NOT NULL,
     `wrap` boolean NOT NULL DEFAULT false,
     `create_at` datetime NOT NULL,
-    `coupon_code` varchar(14),
+    `coupon_code` varchar(20),
     PRIMARY KEY (`id`),
     FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
     FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
