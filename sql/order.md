@@ -60,6 +60,7 @@ CREATE TABLE `order_detail` (
     `wrap` boolean NOT NULL DEFAULT false,
     `create_at` datetime NOT NULL,
     `coupon_code` varchar(20),
+    `update_at` datetime NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
     FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
