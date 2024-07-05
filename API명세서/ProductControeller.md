@@ -187,7 +187,6 @@ ProductBookResponse
 |             | parameter      | name     | String              | 상품 이름                      | no       |
 |             | parameter      | pageNo   | Integer             | 페이지 번호 (기본값: 0)        | no       |
 |             | parameter      | pageSize | Integer             | 한 페이지에 보여질 아이템 수 (기본값: 10) | no       |
-|             |                |          |                     |                                |          |
 | Response    | body           |          | Page<ProductResponse> | 조회된 상품 목록              |          |
 
 
@@ -239,7 +238,6 @@ ProductBookResponse
 | Transaction | Specification | name | type | description            | required |
 |-------------|----------------|------|------|------------------------|----------|
 | Request     | path variable  | id   | long | 주어진 id(long)        | yes      |
-|             |                |      |      |                        |          |
 | Response    | body           |      | BookResponse | 도서 정보 |          |
 
 
@@ -251,7 +249,6 @@ ProductBookResponse
 | Transaction | Specification | name      | type        | description                        | required |
 |-------------|----------------|-----------|-------------|------------------------------------|----------|
 | Request     | body           | bookReq   | BookRequest | 추가할 도서의 정보(BookRequest)    | yes      |
-|             |                |           |             |                                    |          |
 | Response    | body           |           | BookResponse| 추가된 도서의 정보                 |          |
 
 
@@ -266,7 +263,6 @@ ProductBookResponse
 | Transaction | Specification | name | type | description            | required |
 |-------------|----------------|------|------|------------------------|----------|
 | Request     | path variable  | id   | long | 주어진 id(long)        | yes      |
-|             |                |      |      |                        |          |
 | Response    | body           |      | BookResponse | 삭제된 도서의 정보 |          |
 
 
@@ -281,7 +277,6 @@ ProductBookResponse
 |             | parameter      | pageSize   | Integer | 한 페이지에 보여질 아이템 수 (기본값: 10) | no       |
 |             | parameter      | hasProduct | Boolean | 상품으로 등록된 책들만 조회할지 여부 (기본값: false) | no       |
 |             | parameter      | productId  | Integer | 상품 id(int)로 책을 조회할 경우 사용 | no       |
-|             |                |            |         |                                    |          |
 | Response    | body           |            | Page<BookResponse> | 조회된 책 목록                   |          |
 
 
