@@ -181,13 +181,14 @@ ProductBookResponse
 > ![](https://img.shields.io/static/v1?label=&message=GET&color=blue) <br />
 > buzz-book.store:**8090/api/products**
 
-
-| Transaction | Specification | name | type | desciption | required |
-| -- | -- | -- | -- | -- | -- |
-| Request | parameter | status | String | Available values : Product.status | no |
-| | parameter | pageNo | int | Default value : 0 | no |
-| | parameter | pageSize | int | Default value : 10 | no |
-| Response | body | Page\<ProductResponse\> |  |
+| Transaction | Specification | name     | type                | description                    | required |
+|-------------|----------------|----------|---------------------|--------------------------------|----------|
+| Request     | parameter      | status   | Product.StockStatus | 상품 상태                      | no       |
+|             | parameter      | name     | String              | 상품 이름                      | no       |
+|             | parameter      | pageNo   | Integer             | 페이지 번호 (기본값: 0)        | no       |
+|             | parameter      | pageSize | Integer             | 한 페이지에 보여질 아이템 수 (기본값: 10) | no       |
+|             |                |          |                     |                                |          |
+| Response    | body           |          | Page<ProductResponse> | 조회된 상품 목록              |          |
 
 
 
