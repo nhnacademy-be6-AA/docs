@@ -216,6 +216,9 @@ ProductBookResponse
 
 ### 상품 삭제 :
 
+데이터가 물리적으로 삭제되지는 않음.
+(product.product_status=SOLD_OUT, product.stock=0)
+
 > ![](https://img.shields.io/static/v1?label=&message=DELETE&color=red) <br />
 > buzz-book.store:**8090/api/products/{id}**
 
