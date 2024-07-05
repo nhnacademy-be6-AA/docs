@@ -228,4 +228,90 @@ ProductBookResponse
 | Response    | body           |      |      |                        |          |
 
 
+---
+
+### 도서 조회 :
+
+> ![](https://img.shields.io/static/v1?label=&message=GET&color=blue) <br />
+> buzz-book.store:**8090/api/books/{id}**
+
+| Transaction | Specification | name | type | description            | required |
+|-------------|----------------|------|------|------------------------|----------|
+| Request     | path variable  | id   | long | 주어진 id(long)        | yes      |
+|             |                |      |      |                        |          |
+| Response    | body           |      | BookResponse | 도서 정보 |          |
+
+
+### 도서 추가 :
+
+> ![](https://img.shields.io/static/v1?label=&message=POST&color=green) <br />
+> buzz-book.store:**8090/api/books**
+
+| Transaction | Specification | name      | type        | description                        | required |
+|-------------|----------------|-----------|-------------|------------------------------------|----------|
+| Request     | body           | bookReq   | BookRequest | 추가할 도서의 정보(BookRequest)    | yes      |
+|             |                |           |             |                                    |          |
+| Response    | body           |           | BookResponse| 추가된 도서의 정보                 |          |
+
+
+### 도서 삭제 :
+
+데이터가 물리적으로 삭제되지는 않음.
+(product.product_status=SOLD_OUT, product.stock=0, book.product_id=null)
+
+> ![](https://img.shields.io/static/v1?label=&message=DELETE&color=red) <br />
+> buzz-book.store:**8090/api/books/{id}**
+
+| Transaction | Specification | name | type | description            | required |
+|-------------|----------------|------|------|------------------------|----------|
+| Request     | path variable  | id   | long | 주어진 id(long)        | yes      |
+|             |                |      |      |                        |          |
+| Response    | body           |      | BookResponse | 삭제된 도서의 정보 |          |
+
+
+### 조건으로 책 목록 조회 :
+
+> ![](https://img.shields.io/static/v1?label=&message=GET&color=blue) <br />
+> buzz-book.store:**8090/api/books**
+
+| Transaction | Specification | name       | type    | description                        | required |
+|-------------|----------------|------------|---------|------------------------------------|----------|
+| Request     | parameter      | pageNo     | Integer | 페이지 번호 (기본값: 0)            | no       |
+|             | parameter      | pageSize   | Integer | 한 페이지에 보여질 아이템 수 (기본값: 10) | no       |
+|             | parameter      | hasProduct | Boolean | 상품으로 등록된 책들만 조회할지 여부 (기본값: false) | no       |
+|             | parameter      | productId  | Integer | 상품 id(int)로 책을 조회할 경우 사용 | no       |
+|             |                |            |         |                                    |          |
+| Response    | body           |            | Page<BookResponse> | 조회된 책 목록                   |          |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
