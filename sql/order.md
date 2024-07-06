@@ -75,6 +75,7 @@ CREATE TABLE `bill_log` (
     `pay_at` datetime NOT NULL,
     `status` varchar(20) NOT NULL COMMENT 'ENUM(결제전, 결제완료, 결제 취소, 환불, 결제실패)',
     `payment_key` varchar(50),
+    `order_str` varchar(50) NOT NULL,
 	`order_id` bigint NOT NULL,
     `cancel_reason` varchar(255),
     PRIMARY KEY (`id`),
