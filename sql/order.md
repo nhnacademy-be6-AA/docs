@@ -43,7 +43,7 @@ CREATE TABLE `order` (
     `sender` varchar(20) NOT NULL,
     `sender_contact_number` varchar(15) NOT NULL,
     `receiver_contact_number` varchar(15) NOT NULL,
-    `order_password` varchar(255),
+    `order_email` varchar(30),
     PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 );
