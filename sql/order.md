@@ -44,6 +44,7 @@ CREATE TABLE `order` (
     `sender_contact_number` varchar(15) NOT NULL,
     `receiver_contact_number` varchar(15) NOT NULL,
     `order_email` varchar(30),
+    `coupon_code` varchar(20),
     PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 );
@@ -59,7 +60,6 @@ CREATE TABLE `order_detail` (
     `quantity` int NOT NULL,
     `wrap` boolean NOT NULL DEFAULT false,
     `create_at` datetime NOT NULL,
-    `coupon_code` varchar(20),
     `update_at` datetime NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
