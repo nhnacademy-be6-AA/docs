@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS `payment_log`;
 DROP TABLE IF EXISTS `bill_log`;
 DROP TABLE IF EXISTS `order_detail`;
 DROP TABLE IF EXISTS `order`;
@@ -80,21 +79,3 @@ CREATE TABLE `bill_log` (
     PRIMARY KEY (`id`),
     FOREIGN KEY (`order_id`) REFERENCES `order` (`id`)
 );
-
-CREATE TABLE `payment_log` (
-    `id` int NOT NULL AUTO_INCREMENT,
-    `order_id` bigint NOT NULL,
-    `name` varchar(20) NOT NULL,
-    `price` int NOT NULL,
-    PRIMARY KEY (`id`),
-    FOREIGN KEY (`order_id`) REFERENCES `order` (`id`)
-);
-
-insert into `order_status` (id, name, update_at) values (1, 'READY', '2024-06-26 00:00:00');
-insert into `order_status` (id, name, update_at) values (2, 'IN_PROGRESS', '2024-06-26 00:00:00');
-insert into `order_status` (id, name, update_at) values (3, 'WAITING_FOR_DEPOSIT', '2024-06-26 00:00:00');
-insert into `order_status` (id, name, update_at) values (4, 'DONE', '2024-06-26 00:00:00');
-insert into `order_status` (id, name, update_at) values (5, 'CANCELED', '2024-06-26 00:00:00');
-insert into `order_status` (id, name, update_at) values (6, 'PARTIAL_CANCELED', '2024-06-26 00:00:00');
-insert into `order_status` (id, name, update_at) values (7, 'SHIPPING_OUT', '2024-06-26 00:00:00');
-insert into `order_status` (id, name, update_at) values (8, 'SHIPPED', '2024-06-26 00:00:00');
