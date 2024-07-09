@@ -14,7 +14,6 @@ CREATE TABLE publisher (
 );
 
 
-
 CREATE TABLE book (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -35,7 +34,7 @@ CREATE TABLE product (
     thumbnail_path VARCHAR(255),
     description varchar(255),
     category_id INT NOT NULL,
-    product_name VARCHAR(80) NOT NULL,
+    product_name VARCHAR(255) NOT NULL,
     stock_status varchar(20) NOT NULL,
     FOREIGN KEY (category_id) REFERENCES category(id)
 );
