@@ -44,6 +44,7 @@ CREATE TABLE `order` (
     `receiver_contact_number` varchar(15) NOT NULL,
     `order_email` varchar(30),
     `coupon_code` varchar(20),
+    `delivery_rate` int,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 );
