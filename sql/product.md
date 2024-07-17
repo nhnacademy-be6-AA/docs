@@ -32,7 +32,7 @@ CREATE TABLE product (
     forward_date DATE,
     score INT,
     thumbnail_path VARCHAR(255),
-    description varchar(255),
+    description text,
     category_id INT NOT NULL,
     product_name VARCHAR(255) NOT NULL,
     stock_status varchar(20) NOT NULL,
@@ -92,7 +92,7 @@ CREATE TABLE product_tag (
 CREATE TABLE review (
 	id	int	NOT NULL primary key auto_increment,
 	content	varchar(255)	NOT NULL,
-	pricture_path	varchar(255)	NULL,
+	pricture_path	text	NULL,
 	review_score	int	NOT NULL,
 	review_created_at	datetime	NOT NULL,
 	order_detail_id	bigint	NOT NULL,
