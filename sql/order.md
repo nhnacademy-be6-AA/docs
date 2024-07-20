@@ -25,7 +25,7 @@ CREATE TABLE `delivery_policy` (
     `name` varchar(20) NOT NULL,
     `standard_price` int NOT NULL,
     `policy_price` int NOT NULL,
-    `is_deleted` boolean not null default false,
+    `deleted` boolean not null default false,
     PRIMARY KEY (`id`)
 );
 
