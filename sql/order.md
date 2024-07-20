@@ -9,6 +9,7 @@ CREATE TABLE `wrapping` (
     `id` int NOT NULL AUTO_INCREMENT,
     `paper` varchar(20) NOT NULL COMMENT '예)박스,종이 포장 등등',
     `price` int NOT NULL,
+    `deleted` boolean not null default false,
     PRIMARY KEY (`id`)
 );
 
