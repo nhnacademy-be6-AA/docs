@@ -8,9 +8,11 @@ ELK = Elasticsearch + Logstash + Kibana
 
 ![image](https://github.com/user-attachments/assets/5974e917-d8e5-466b-9657-9bd03969d198)
 
-</br>
-</br>
-</br>
+<br>
+<br>
+<hr />
+<br>
+<br>
 
 > <h2>RDB와의 차이</h2>
 
@@ -47,6 +49,7 @@ ELK = Elasticsearch + Logstash + Kibana
 
 <br>
 <br>
+<hr />
 <br>
 <br>
 
@@ -119,9 +122,11 @@ ELK = Elasticsearch + Logstash + Kibana
 <br>
 <br>
 <br>
-
-
-
+<br>
+<br>
+<hr />
+<br>
+<br>
 <br>
 
 
@@ -152,3 +157,5 @@ https://ghkdqhrbals.github.io/portfolios/docs/elasticSearch/2022-12-31-elastic-s
 (Elastic Search의 개념 및 RDB와의 차이점)<br>
 https://velog.io/@dat0802/Elasticsearch%EC%99%80-RDB%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC<br>
 (Elasticsearch와 RDB에 대하여)<br>
+https://velog.io/@jakeseo_me/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0-2-DB%EB%A7%8C-%EC%9E%88%EC%9C%BC%EB%A9%B4-%EB%90%98%EB%8A%94%EB%8D%B0-%EC%99%9C-%EA%B5%B3%EC%9D%B4-%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84#%EC%8A%A4%ED%82%A4%EB%A7%88%EB%A6%AC%EC%8A%A4schemaless<br>
+(DB만 있으면 되는데, 왜 굳이 검색엔진?)<br>
