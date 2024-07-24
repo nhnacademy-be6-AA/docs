@@ -141,6 +141,9 @@ ELK = Elasticsearch + Logstash + Kibana
 모델링 방법론 :<br>
 [https://s-core.co.kr/insight/view/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98elasticsearch%EC%97%90%EC%84%9C-%EA%B4%80%EA%B3%84%ED%98%95-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8%EB%A7%81-%ED%95%98%EA%B8%B0/]
 
+Keyword타입과 text타입의 차이 :<br>
+[https://www.notion.so/0e80a0fa54fa43bcb04f2aa2432f7e4a?v=50cb6386acb04fdd8af15680936eb2c2&p=7bf4b65b9f3d45aaa9bea655794da45e&pm=c]
+
 문법 :<br>
 [https://github.com/kimjmin/elastic-demo/blob/master/demos/get-started/elasticsearch-7x.md]
 <br>
