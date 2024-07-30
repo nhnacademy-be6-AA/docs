@@ -71,9 +71,11 @@ CREATE TABLE `user_auth` (
 	`id`	int	NOT NULL  ,
 	`user_id`	bigint	NOT NULL ,
 	`provider`	varchar(20)	NOT NULL ,
-	`token`	varchar(255)	NOT NULL,
-	`create_date`	datetime	NOT NULL
+	`provideId` 	bigint		NOT NULL
 );
+
+alter table user_auth add index index_provide_Id (provide_id);
+ALTER TABLE user_auth ADD UNIQUE KEY unique_provider_id (provide_Id, provider);
 
 DROP table if exists `cart`;
 CREATE TABLE `cart` (
