@@ -68,7 +68,7 @@ CREATE TABLE user_coupon (
 
 DROP table if exists `user_auth`;
 CREATE TABLE `user_auth` (
-	`id`	int	NOT NULL  ,
+	`id`		bigint	NOT NULL  ,
 	`user_id`	bigint	NOT NULL ,
 	`provider`	varchar(20)	NOT NULL ,
 	`provideId` 	bigint		NOT NULL
