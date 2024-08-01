@@ -36,7 +36,7 @@ CREATE TABLE `grade` (
 DROP table if exists `user`;
 CREATE TABLE `user` (
 	`id`	bigint	NOT NULL,
-	`login_id`	varchar(20)	NOT NULL unique,
+	`login_id`	varchar(50)	NOT NULL unique,
 	`name`	varchar(20)	NOT NULL,
 	`contact_number`	varchar(15)	NOT NULL,
 	`email`	varchar(255)	NOT NULL,
@@ -68,10 +68,10 @@ CREATE TABLE user_coupon (
 
 DROP table if exists `user_auth`;
 CREATE TABLE `user_auth` (
-	`id`		bigint	NOT NULL  ,
+	`id`		bigint	NOT NULL AUTO_INCREMENT ,
 	`user_id`	bigint	NOT NULL ,
 	`provider`	varchar(20)	NOT NULL ,
-	`provideId` 	bigint		NOT NULL
+	`provideId` 	binary(16)		NOT NULL
 );
 
 alter table user_auth add index index_provide_Id (provide_id);
