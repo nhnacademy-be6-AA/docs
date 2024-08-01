@@ -221,6 +221,7 @@ REFERENCES `product` (
 	`id`
 );
 
+
 ALTER TABLE grade_log ADD CONSTRAINT FK_grade_TO_grade_log_1 FOREIGN KEY (
 	grade_id
 )
@@ -234,5 +235,8 @@ ALTER TABLE grade_log ADD CONSTRAINT FK_user_TO_grade_log_1 FOREIGN KEY (
 REFERENCES user (
 	id
 );
+
+ALTER TABLE `wishlist` ADD CONSTRAINT `unique_user_product`
+UNIQUE (`user_id`, `product_id`);
 
 ```
