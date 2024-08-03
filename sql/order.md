@@ -47,8 +47,13 @@ CREATE TABLE `order` (
     `order_email` varchar(30),
     `coupon_code` varchar(20),
     `delivery_rate` int not null,
+    `deducted_points` int,
+    `earned_points` int,
+    `deducted_coupon_price` int,
+    `order_status_id` int NOT NULL,
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+    FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+    FOREIGN KEY (`order_status_id`) REFERENCES `order_status` (`id`)
 );
 
 
